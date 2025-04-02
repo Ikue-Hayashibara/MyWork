@@ -15,5 +15,6 @@ def fizz_buzz(number)
     
 end
 
+
 input = gets.to_i
 fizz_buzz(input)
