@@ -2,7 +2,7 @@
 def fizz_buzz(number)
     return puts "0以外の数値を入力してください" if number == 0
     
-    if number % 3 == 0 && number % 5 == 0
+    if number % 15 == 0
         puts "Fizz Buzz"
     elsif number % 5 == 0
         puts "Buzz"
@@ -15,7 +15,9 @@ def fizz_buzz(number)
     
 end
 
+fizz_buzz(1)
 
 
-input = gets.to_i
-fizz_buzz(input)
+
+
+
