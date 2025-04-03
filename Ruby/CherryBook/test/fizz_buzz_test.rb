@@ -8,5 +8,6 @@ class FizzBuzzTest < Minitest::Test
     assert_equal "Buzz", fizz_buzz(5)
     assert_equal "Fizz Buzz", fizz_buzz(15)
     assert_equal "17", fizz_buzz(17)
+    assert_equal "Fizz", fizz_buzz(18)
   end
 end
