@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 画面全体に合わせる */
+    margin: 0;
+}
+
+.boxContainer {
+    text-align: center;
+    
+}
+
+input {
+    border: none;
+    outline: none;
+    caret-color: transparent;
+}
+
+.marker {
+    /* color: #ffffff55; */
+    color: gray;
+}
