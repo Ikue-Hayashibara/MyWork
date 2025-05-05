@@ -8,6 +8,7 @@ body {
 
 .boxContainer {
     text-align: center;
+    font-size: 40px;
     
 }
 
@@ -19,5 +20,5 @@ input {
 
 .marker {
     /* color: #ffffff55; */
-    color: gray;
+    color: rgb(227, 161, 40);
 }
