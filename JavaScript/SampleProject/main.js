@@ -4,16 +4,49 @@ const correct = document.querySelector("#correct")
 const inputText = document.querySelector("#inputText");
 const correctSound = document.querySelector("#correctSound");
 const misSound = document.querySelector("#misSound");
-let text = questions[Math.floor(Math.random() * questions.length)];
+const start = document.querySelector("#start");
+const startButton = document.querySelector("#startButton");
+const contents = document.querySelector("#contents");
+const countdown = document.querySelector("#countdown");
+const finish = document.querySelector("#finish");
+const misTypeText = document.querySelector("#misTypeText");
+
+contents.style.display = "none";
+countdown.style.display = "none";
+finish.style.display = "none";
+let text = "";
 let enterd = [];
 let resultChars = [];
-question.textContent = text;
 let result = "";
-setText(text);
+let count = 0;
+let countMax = 5;
+let misTypeCount = 0;
+let isGame = false;
 
-document.body.addEventListener("click", function() {
-    inputText.focus();
+document.addEventListener("keydown", function(e) {
+    if (!isGame && e.code === "Space") {
+            isGame = true;
+            start.style.display = "none";
+            startCountdown(() => {
+            contents.style.display = "block";
+            text = questions[Math.floor(Math.random() * questions.length)];
+            question.textContent = text;
+            setText(text);
+            inputText.focus();
+        });
+    }
 });
+
+// startButton.addEventListener("click", function() {
+//     start.style.display = "none";
+//     startCountdown(() => {
+//         contents.style.display = "block";
+//         text = questions[Math.floor(Math.random() * questions.length)];
+//         question.textContent = text;
+//         setText(text);
+//         inputText.focus();
+//     });
+// });
 
 inputText.addEventListener("keydown", (e) => {
     if (e.key === "Escape"){
@@ -32,13 +65,23 @@ inputText.addEventListener("keydown", (e) => {
     } else {
         misSound.currentTime = 0;
         misSound.play();
+        misTypeCount++;
     }
 
     if (resultChars.length == 0) {
-        enterd = [];
-        text = questions[Math.floor(Math.random() * questions.length)];
-        question.textContent = text;
-        setText(text); 
+        count++;
+        if (count < countMax) {
+            enterd = [];
+            text = questions[Math.floor(Math.random() * questions.length)];
+            question.textContent = text;
+            setText(text); 
+        } else {
+            contents.style.display = "none";
+            finish.style.display = "block";
+            misTypeText.textContent = misTypeCount;
+            return;
+        }
+        
     }
     correct.textContent = enterd.join("");
     showInput.textContent = resultChars.join("");
@@ -103,4 +146,23 @@ function normalizeKana(char) {
 
 function normalizeContracted(char) {
     return kanaToRomaji[char[1]][0][0] + kanaToRomaji[char[1]][0];
+};
+
+function startCountdown(callback) {
+    countdown.style.display = "block";
+    let count = 3;
+    countdown.textContent = count;
+
+    const interval = setInterval(() => {
+        count--;
+        if (count > 0) {
+            countdown.textContent = count;
+        } else if (count === 0) {
+            countdown.textContent = "START!";
+        } else {
+            clearInterval(interval);
+            countdown.style.display = "none";
+            callback(); // カウントダウンが終わったら、処理
+        }
+    }, 1000);
 };

@@ -5,16 +5,43 @@ body {
     align-items: center;
     height: 100vh; /* 画面全体に合わせる */
     margin: 0;
+    background-color: antiquewhite;
+}
+
+.startContainer {
+    font-size: 40px;
+    text-align: center;
+}
+
+.startText {
+    line-height: 1;
+ 
+}
+
+.button {
+    border-style: none;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+    
+}
+
+.countdownText {
+    font-size: 40px;
 }
 
 .boxContainer {
+    padding-bottom: 50px;
     width: 80vw;
-    padding: 20px;
-    /* height: 15vw; */
-    background-color: rgb(218, 229, 253);
+    height: 50vw;
+    background-image: url(Resources/Image/tv_wide.png);
+    background-size: 100% 100%;
+    /* background-repeat: no-repeat; */
+    display: flex;              /* ← 横並び or 縦横揃えのベース */
+    align-items: center;        /* ← 縦方向の中央揃え */
+    justify-content: center;    /* ← 横方向の中央揃え */
     text-align: center;
     font-size: 40px;
-    border-radius: 20px;
     
 }
 
@@ -24,7 +51,16 @@ input {
     caret-color: transparent;
 }
 
+.text {
+    color: rgb(228, 224, 200);
+}
+
 .marker {
     /* color: #ffffff55; */
     color: rgb(227, 161, 40);
+}
+
+.finText {
+    font-size: 40px;
+    text-align: center;
 }

@@ -7,19 +7,31 @@
     <script src="kana_map.js" defer></script>
     <script src="questions.js" defer></script>
     <script src="main.js" defer></script>
-    <title>タイピングゲーム</title>
+    <title>タイピングマスター</title>
 </head>
 <body>
-    <div class="boxContainer">
-        <div class="container">
-            <div id="question"></div>
-            <span id="correct" class="marker"></span><span id="showInput"></span>
-        </div>
-    </div>  
-    <div>
-        <input type="text" id="inputText">
-        <audio id="correctSound" src="Resources/Sound/typing_correct.mp3" preload="auto"></audio>
-        <audio id="misSound" src="Resources/Sound/typing_mistake.mp3" preload="auto"></audio>
+    <div id="start" class="startContainer">
+        <div class="startText">目指せタイピングマスター！</div>
+        <button id="startButton" class="button">開始！</button>
     </div>
+    <div id="countdown" class="countdownText"></div>
+    <div id="contents">
+        <div class="boxContainer">
+            <div class="container">
+                <div id="question" class="text"></div>
+                <span id="correct" class="marker"></span><span id="showInput" class="text"></span>
+            </div>
+        </div>  
+        <div>
+            <input type="text" id="inputText">
+            <audio id="correctSound" src="Resources/Sound/typing_correct.mp3" preload="auto"></audio>
+            <audio id="misSound" src="Resources/Sound/typing_mistake.mp3" preload="auto"></audio>
+        </div>
+    </div>
+    <div id="finish" class="finText">
+        <div>おわり！</div>
+        <div id="misTypeText"></div>
+    </div>
+    
 </body>
 </html>
