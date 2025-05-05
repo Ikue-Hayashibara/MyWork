@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh; /* 画面全体に合わせる */
@@ -7,8 +8,13 @@ body {
 }
 
 .boxContainer {
+    width: 80vw;
+    padding: 20px;
+    /* height: 15vw; */
+    background-color: rgb(218, 229, 253);
     text-align: center;
     font-size: 40px;
+    border-radius: 20px;
     
 }
 
