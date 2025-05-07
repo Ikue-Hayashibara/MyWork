@@ -78,7 +78,7 @@ inputText.addEventListener("keydown", (e) => {
         } else {
             contents.style.display = "none";
             finish.style.display = "block";
-            misTypeText.textContent = misTypeCount;
+            misTypeText.textContent = `ミスタイプ： ${misTypeCount}`;
             return;
         }
         
